@@ -26,29 +26,121 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Custom CSS for styling
+st.markdown("""
+    <style>
+        /* Custom styling for the title */
+        .title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Sidebar styling (links, icons) */
+        .sidebar-links img {
+            width: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .sidebar-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .sidebar-links {
+            line-height: 2.5;
+        }
+
+        /* Styling for the input fields */
+        input, .stTextInput, .stNumberInput, .stButton {
+            background-color: rgba(255, 255, 255, 0.8);  /* Light background for input fields */
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        /* Style for the buttons */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Background for the whole app */
+        body {
+            background-color: #111 !important;
+            color: #fff !important;
+        }
+
+        h1, h2, h3, .stTextInput label {
+            color: rgb(62, 2, 6);
+        }
+
+        hr {
+            margin-top: 2rem;
+            border: 1px solid #444;
+        }
+
+        .stTextInput input, .stNumberInput input {
+            background-color: #222;
+            color: #0ff;
+        }
+
+        /* Button styling */
+        .stButton>button {
+            background-color: #00f5d4;
+            color: black;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        /* Background image for both the app and the sidebar */
+        .stApp {
+            background: url("https://img.freepik.com/premium-photo/abstract-purple-background-with-smooth-curves_1332213-51917.jpg?semt=ais_hybrid&w=740");
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+        }
+
+        /* Set a background image for the sidebar */
+        [data-testid="stSidebar"] {
+            background-image: url("https://img.freepik.com/free-vector/abstract-background-vertical-with-colorful-shape_361591-4081.jpg?semt=ais_hybrid&w=740");
+            background-size: cover;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Sidebar content
 st.sidebar.markdown("## 👨‍💻 Connect with Me")
 
 st.sidebar.markdown("""
-<div class="sidebar-links">
-    <a href="https://github.com/marianadeem755" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> GitHub
-    </a><br>
-    <a href="https://www.kaggle.com/marianadeem755" target="_blank">
-        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/189_Kaggle_logo_logos-512.png"> Kaggle
-    </a><br>
-    <a href="mailto:marianadeem755@gmail.com">
-        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"> Email
-    </a><br>
-    <a href="https://huggingface.co/maria355" target="_blank">
-        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"> Hugging Face
-    </a>
-</div>
+    <div class="sidebar-links">
+        <a href="https://github.com/marianadeem755" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> GitHub
+        </a><br>
+        <a href="https://www.kaggle.com/marianadeem755" target="_blank">
+            <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/189_Kaggle_logo_logos-512.png"> Kaggle
+        </a><br>
+        <a href="mailto:marianadeem755@gmail.com">
+            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"> Email
+        </a><br>
+        <a href="https://huggingface.co/maria355" target="_blank">
+            <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"> Hugging Face
+        </a>
+    </div>
 """, unsafe_allow_html=True)
-
-# Load custom CSS
-with open("style.css", "r") as css_file:
-    st.markdown(f"<style>{css_file.read()}</style>", unsafe_allow_html=True)
 
 # App Title
 st.markdown("<h1 class='title'>🧮 Smart Calculator & Unit Converter</h1>", unsafe_allow_html=True)
