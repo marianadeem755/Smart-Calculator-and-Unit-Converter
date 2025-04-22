@@ -26,6 +26,26 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Sidebar content
+st.sidebar.markdown("## 👨‍💻 Connect with Me")
+
+st.sidebar.markdown("""
+<div class="sidebar-links">
+    <a href="https://github.com/marianadeem755" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"> GitHub
+    </a><br>
+    <a href="https://www.kaggle.com/marianadeem755" target="_blank">
+        <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/189_Kaggle_logo_logos-512.png"> Kaggle
+    </a><br>
+    <a href="mailto:marianadeem755@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png"> Email
+    </a><br>
+    <a href="https://huggingface.co/maria355" target="_blank">
+        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg"> Hugging Face
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
 # Load custom CSS
 with open("style.css", "r") as css_file:
     st.markdown(f"<style>{css_file.read()}</style>", unsafe_allow_html=True)
@@ -33,13 +53,12 @@ with open("style.css", "r") as css_file:
 # App Title
 st.markdown("<h1 class='title'>🧮 Smart Calculator & Unit Converter</h1>", unsafe_allow_html=True)
 
-# Tabs reordered
+# Tabs for navigation
 tab1, tab2, tab3, tab4 = st.tabs(["➕ Simple Calculator", "📐 Scientific Calculator", "🔁 Unit Converter", "🧾 History"])
 
-# === TAB 1: Simple Calculator ===
+# Simple Calculator tab
 with tab1:
     st.markdown("### Perform basic operations")
-
     num1 = st.number_input("Enter first number", key="n1")
     num2 = st.number_input("Enter second number", key="n2")
 
@@ -88,7 +107,7 @@ with tab1:
             st.success(f"√{num1} = {res}")
             st.session_state.history.append(f"√{num1} = {res}")
 
-# === TAB 2: Scientific Calculator ===
+# Scientific Calculator tab
 with tab2:
     st.markdown("### Enter your formula:")
     expr_input = st.text_input("Example: 2 * π * 5 or (3 + 2)^2", key="calc_input")
@@ -102,11 +121,10 @@ with tab2:
             timestamp = datetime.datetime.now().strftime("%H:%M:%S")
             st.success(f"✅ Result: {result}")
             st.session_state.history.append(f"[{timestamp}] [Scientific] {expr_input} = {result}")
-
         except Exception as e:
             st.error(f"❌ Error: {e}")
 
-# === TAB 3: Unit Converter ===
+# Unit Converter tab
 with tab3:
     st.markdown("### Convert between units:")
 
@@ -123,7 +141,7 @@ with tab3:
         except Exception as e:
             st.error(f"❌ Conversion Error: {e}")
 
-# === TAB 4: History ===
+# History tab
 with tab4:
     st.markdown("### 🧾 Your Recent Calculations")
     if st.session_state.history:
