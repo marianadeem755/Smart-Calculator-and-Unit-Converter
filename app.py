@@ -34,7 +34,7 @@ st.markdown("""
             text-align: center;
             font-size: 2.5rem;
             font-weight: bold;
-            color: #fff;
+            color: darkred;  /* Changed to dark red */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
