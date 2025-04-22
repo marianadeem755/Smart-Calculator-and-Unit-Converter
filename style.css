@@ -94,4 +94,6 @@ hr {
 [data-testid="stSidebar"] {
     background-image: url("https://img.freepik.com/free-vector/abstract-background-vertical-with-colorful-shape_361591-4081.jpg?semt=ais_hybrid&w=740");
     background-size: cover;
+    background-position: center;
+    height: 100%;
 }
