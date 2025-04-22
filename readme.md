@@ -1,4 +1,3 @@
-```markdown
 # 🧪 Smart Calculator & Unit Converter
 
 This is a **Streamlit-based web application** that have a **scientific calculator**, **unit converter**, and **history tracking** functionality. The app is designed to provide a user-friendly interface for performing basic and advanced calculations, converting units and keeping track of past operations.
